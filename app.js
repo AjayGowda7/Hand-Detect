@@ -24,6 +24,9 @@ handTrack.startVideo(video).then(status =>{
 function runDetection(){
     model.detect(video).then(predictions =>{
         console.log(predictions);
+        if(predictions.length>0){
+        audio.play();
+        }
     model.renderPredictions(predictions,canvas,context,video);
     });
 }
